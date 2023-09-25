@@ -61,7 +61,7 @@ h1{
     color: white;
 }
 
-.clock #ampm {
+.clock #amPm {
     position: absolute;
     bottom: -87px;
     right: -60px;
