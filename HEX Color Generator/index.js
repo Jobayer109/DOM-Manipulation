@@ -10,3 +10,12 @@ function main() {
     output.value = bgColor;
   });
 }
+main();
+
+function generateHEXColor() {
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let black = Math.floor(Math.random() * 255);
+
+  return `#${red.toString(16)}${green.toString(16)}${black.toString(16)}`;
+}
