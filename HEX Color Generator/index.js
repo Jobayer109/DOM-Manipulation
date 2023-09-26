@@ -1,3 +1,7 @@
+window.onload = () => {
+  main();
+};
+
 function main() {
   const btn = document.getElementById("btn");
   const root = document.getElementById("root");
@@ -10,7 +14,6 @@ function main() {
     output.value = bgColor;
   });
 }
-main();
 
 function generateHEXColor() {
   let red = Math.floor(Math.random() * 255);
