@@ -30,7 +30,30 @@ h1{
     font-weight: 600;
 }
 
+.btn__div{
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
 
+#btn{
+    height: 60px;
+    width: 200px;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:pink;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#btn:hover{
+    background-color: orangered;
+    color: white;
+    transition:all ease-in .2s
+}
 
 /* #btn::before{
     content: "";
