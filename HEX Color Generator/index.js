@@ -1,3 +1,12 @@
+/*
+    Requirements:
+    -------------
+      1. Generate Hex color and change the the background color.
+      2. Display the HEX code in the UI.
+      3. Copy the the HEX color code by clicking a 'copy button'.
+
+*/
+
 window.onload = () => {
   main();
 };
