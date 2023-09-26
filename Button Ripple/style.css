@@ -14,7 +14,7 @@ html, body{
     background-color:black;
 }
 
-.btn{
+#btn{
    background-color:#ecb3bd;
    border: 1px solid #fffefe;
    border-radius: 5px;
@@ -28,27 +28,27 @@ html, body{
    overflow: hidden;
 }
 
-.btn span{
+#btn span{
     position: relative;
     z-index: 1;
     color: black;
 }
 
-.btn::before{
+#btn::before{
     content: "";
     position: absolute;
     background-color: orangered;
     height: 0px;
     width: 0px;
-    top: 50%;
-    left: 50%;
+    left: var(--xPos);
+    top: var(--yPos);
     transform: translate(-50%, -50%);
     border-radius: 50%;
     transition: width 0.5s, height 0.5s;
 
 }
 
-.btn:hover::before{
+#btn:hover::before{
     height: 300px;
     width: 300px;
    
