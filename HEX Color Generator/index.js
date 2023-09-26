@@ -12,15 +12,19 @@ window.onload = () => {
 };
 
 function main() {
-  const btn = document.getElementById("btn");
+  const changeBtn = document.getElementById("btn");
+  const copyBtn = document.getElementById("copy-btn");
   const root = document.getElementById("root");
   const output = document.getElementById("input");
 
-  btn.addEventListener("click", function (e) {
+  changeBtn.addEventListener("click", function (e) {
     const bgColor = generateHEXColor();
     root.style.backgroundColor = bgColor;
-
     output.value = bgColor;
+  });
+
+  copyBtn.addEventListener("click", function (e) {
+    window.navigator.clipboard.writeText(output.value);
   });
 }
 
