@@ -49,5 +49,11 @@ function generateHEXColor() {
 function generateToastMsg(msg) {
   let msgDiv = document.createElement("div");
   msgDiv.innerText = msg;
+  msgDiv.className = "toast__msg";
+
   document.body.appendChild(msgDiv);
+
+  setTimeout(() => {
+    msgDiv.remove();
+  }, 2000);
 }
