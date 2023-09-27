@@ -5,6 +5,7 @@
       2. Display the HEX code in the UI.
       3. Copy the the HEX color code by clicking a 'copy button'.
       4. Show a toast message when copied.
+      5. Change the BG by typing HEX code in the input field.
 
 */
 
@@ -32,7 +33,11 @@ function main() {
   copyBtn.addEventListener("click", function (e) {
     window.navigator.clipboard.writeText(output.value);
 
-    generateToastMsg(`${output.value} copied`);
+    if (output.value) {
+      generateToastMsg(`${output.value} copied`);
+    } else {
+      alert("Invalid color code");
+    }
   });
 }
 
@@ -55,5 +60,5 @@ function generateToastMsg(msg) {
 
   setTimeout(() => {
     msgDiv.remove();
-  }, 2000);
+  }, 3000);
 }
