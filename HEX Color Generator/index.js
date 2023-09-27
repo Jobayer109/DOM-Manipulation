@@ -62,3 +62,19 @@ function generateToastMsg(msg) {
     msgDiv.remove();
   }, 3000);
 }
+
+/**
+ *
+ * @param {string} color
+ * @returns
+ */
+// Change the BG by typing HEX code in the input field.
+function isValidHEX(color) {
+  if (color.length !== 7) return false;
+  if (color[0] !== "#") return false;
+
+  color = color.substring(1);
+
+  return;
+  /[0-9A-Za-z]{6}/i.test(color);
+}
