@@ -33,10 +33,17 @@ function main() {
   copyBtn.addEventListener("click", function (e) {
     window.navigator.clipboard.writeText(output.value);
 
-    if (output.value) {
+    if (output.value && output.value !== 6 && isValidHEX(output.value)) {
       generateToastMsg(`${output.value} copied`);
     } else {
-      alert("Invalid color code");
+      alert("invalid HEX color code");
+    }
+  });
+
+  output.addEventListener("keyup", function (e) {
+    const color = e.target.value;
+    if (color && isValidHEX(color)) {
+      root.style.backgroundColor = color;
     }
   });
 }
@@ -75,6 +82,5 @@ function isValidHEX(color) {
 
   color = color.substring(1);
 
-  return;
-  /[0-9A-Za-z]{6}/i.test(color);
+  return /^[0-9A-Fa-f]{6}$/i.test(color);
 }
