@@ -23,11 +23,16 @@ h1{
     letter-spacing: 2px;
 }
 
+
+
 .input__section{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
 #input{
@@ -39,10 +44,26 @@ h1{
     outline: none;
     border-radius: 5px;
     height: 40px;
+    border: none;
 }
 
 #input:hover{
     cursor:text;
+}
+
+.hash__icon{
+    position:absolute;
+    padding: 0.4rem .7rem;
+    background-color:#000000;
+    /* border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem; */
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bolder;
+    left: 0;
+    height: 40px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 #copy-btn{
