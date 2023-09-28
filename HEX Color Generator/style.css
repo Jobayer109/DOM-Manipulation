@@ -32,7 +32,7 @@ h1{
     margin-top: 20px;
     gap: 0.5rem;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #input{

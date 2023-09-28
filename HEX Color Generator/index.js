@@ -25,8 +25,8 @@ function main() {
   // Change the BG color with random order.
   changeBtn.addEventListener("click", function (e) {
     const bgColor = generateHEXColor();
-    root.style.backgroundColor = bgColor;
-    output.value = bgColor;
+    root.style.backgroundColor = `#${bgColor}`;
+    output.value = bgColor.toUpperCase();
   });
 
   //  HEX color code copied by the help of browser navigator.
@@ -34,7 +34,7 @@ function main() {
     window.navigator.clipboard.writeText(output.value);
 
     if (output.value && output.value !== 6 && isValidHEX(output.value)) {
-      generateToastMsg(`${output.value} copied`);
+      generateToastMsg(`#${output.value} copied`);
     } else {
       alert("invalid HEX color code");
     }
@@ -42,8 +42,12 @@ function main() {
 
   output.addEventListener("keyup", function (e) {
     const color = e.target.value;
-    if (color && isValidHEX(color)) {
-      root.style.backgroundColor = color;
+    if (color) {
+      output.value = color.toUpperCase();
+
+      if (color && isValidHEX(color)) {
+        root.style.backgroundColor = `#${color}`;
+      }
     }
   });
 }
@@ -54,7 +58,7 @@ function generateHEXColor() {
   let green = Math.floor(Math.random() * 255);
   let black = Math.floor(Math.random() * 255);
 
-  return `#${red.toString(16)}${green.toString(16)}${black.toString(16)}`;
+  return `${red.toString(16)}${green.toString(16)}${black.toString(16)}`;
 }
 
 // Toast message function
@@ -77,10 +81,9 @@ function generateToastMsg(msg) {
  */
 // Change the BG by typing HEX code in the input field.
 function isValidHEX(color) {
-  if (color.length !== 7) return false;
-  if (color[0] !== "#") return false;
-
-  color = color.substring(1);
+  if (color.length !== 6) return false;
+  // if (color[0] !== "#") return false;
+  // color = color.substring(1);
 
   return /^[0-9A-Fa-f]{6}$/i.test(color);
 }
